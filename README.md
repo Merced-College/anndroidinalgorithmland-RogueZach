@@ -3,7 +3,8 @@
 
 A sample project to practice sorting and searching.
 
-**Group Members:** Zachary Amith
+**Group Members:** Zachary Amith + John Chiero
+
 **Date:** March 31, 2026
 
 Project setup completed successfully.
