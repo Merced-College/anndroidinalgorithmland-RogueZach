@@ -55,40 +55,42 @@ Part 2 Questions:
 
 ## Sorting
 
-**In which class did your team add the sorting code?**
-`LeaderboardAlgorithms.java`
+Part 3 Questions:
 
-**Why did you choose that location?**
-It was set up for us with empty methods, and the leaderboard screen already calls those methods.
+1. In which class did your team add the sorting code?
+--> LeaderboardAlgorithms.java
 
-**What data structure is being sorted?**
-An `ArrayList<ScoreEntry>`.
+2. Why did you choose that location?
+--> It already had empty methods set up for us and the leaderboard screen was already calling them.
 
-**Which sorting algorithm did your team choose?**
-Selection sort for sorting by score, and insertion sort for sorting by username.
+3. What data structure is being sorted?
+--> An ArrayList of ScoreEntry objects.
 
-**How does your algorithm work in your own words?**
-Selection sort goes through the list and finds the biggest score, then swaps it to the front. Then it finds the next biggest and puts it second, and so on until the whole list is sorted.
+4. Which sorting algorithm did your team choose?
+--> Selection sort for sorting by score and insertion sort for sorting by username.
 
-Insertion sort starts at the second item and works forward. For each item, it slides it backward past any items that come after it alphabetically, until it lands in the right spot.
+5. How does your algorithm work in your own words?
+--> Selection sort looks through the whole list and finds the biggest score then swaps it to the front. Then it looks through the rest and finds the next biggest and puts it second. It keeps doing that until everything is in order.
 
-**How did you verify that your sort was correct?**
-We ran the program, loaded the CSV, clicked "Top 20" and checked that the highest scores were on top. Then we clicked "Sort by Username" and checked that names went from A to Z.
+Insertion sort starts at the second item and goes forward. It takes each item and slides it back past anything that comes after it alphabetically until it lands in the right spot.
+
+6. How did you verify that your sort was correct?
+--> We ran the program, loaded the CSV, clicked Top 20 and made sure the highest scores were on top. Then we clicked Sort by Username and made sure the names went A to Z.
 
 ---
 
 ## Searching
 
-**How does binary search work in your own words?**
-It looks at the middle of the list. If that's the one we want, we're done. If what we want comes before the middle, we throw out the second half and search the first half. If it comes after, we throw out the first half. We keep cutting the list in half until we find it or run out of list.
+Part 4 Questions:
 
-**Why must the data be sorted before binary search can be used?**
-Because the whole idea is to throw away half the list based on whether the target is bigger or smaller than the middle. If the list isn't sorted, that doesn't work.
+1. How does binary search work in your own words?
+--> You look at the middle of the list. If thats the one you want then you're done. If what you want comes before the middle you throw out the second half. If it comes after you throw out the first half. You keep cutting it in half until you find it or theres nothing left.
 
-**What variables did you use for low, high, and mid?**
-- `low` — the start of the section we're searching
-- `high` — the end of the section we're searching
-- `mid` — the middle, calculated as `low + (high - low) / 2`
+2. Why must the data be sorted before binary search can be used?
+--> Because binary search throws away half the list based on whether the target is before or after the middle. If the list isnt sorted that logic doesnt work.
 
-**What happens when the score is not found?**
-The loop ends because `low` passes `high`, meaning there's nothing left to search. The method returns `-1` and the screen says "Not found."
+3. What variables did you use for low, high, and mid?
+--> low is the start of the section we're looking in. high is the end. mid is the middle and we calculate it as low + (high - low) / 2.
+
+4. What happens when the score is not found?
+--> The loop stops because low passes high so theres nothing left to check. The method returns -1 and the screen shows "Not found."
