@@ -13,63 +13,43 @@ Project setup completed successfully.
 
 ## Code Exploration
 
-### Step 1 — Project Structure
+Part 2 Questions:
 
-**What types of files are located in the src folder?**
-Java files (`.java`). These are the source code files that make up the game.
+1. Which class contains the main() method?
+--> The class that contains the main() method is Main.java
 
-**What appears to be stored in the content folder?**
-Images, sound files, and the leaderboard CSV file. These are the assets the game uses when it runs.
+2. What does the program do when it first starts running?
+--> It opens a window and shows the main menu. Background music starts playing right away.
 
-**What is the purpose of the uml folder?**
-It has a diagram that shows how the classes in the project relate to each other.
+3. What objects or classes are created when the program begins?
+--> A JFrame (the window), an AppRouter (handles switching between screens), and three panels: MainMenuPanel, RabbitGamePanel, and LeaderboardPanel.
 
-**Why do software projects often separate code from content/assets?**
-It keeps things organized. You can change images or sounds without touching the code, and vice versa.
+4. Which class appears responsible for drawing graphics?
+--> MainMenuPanel draws the menu screen. RabbitGamePanel draws the game with the rabbit and the score.
 
-### Step 2 — Main Program
+5. Which class appears responsible for loading files or content?
+--> Assets loads images and audio files. LeaderboardRepository loads the CSV file.
 
-**Which class contains the main() method?**
-`Main.java`
+6. How does the game update what appears on the screen?
+--> It uses timers that go off every second. One timer moves the rabbit to a random spot. Another one counts down the clock. Every time they go off the screen redraws.
 
-**What does the program do when it first starts running?**
-It opens a window and shows the main menu with background music playing.
+7. What does the UML diagram help you understand about the program?
+--> It shows what classes are in the project and how they connect to each other.
 
-**What objects or classes are created when the program begins?**
-A `JFrame` (the window), an `AppRouter` (manages which screen is showing), and three panels: `MainMenuPanel`, `RabbitGamePanel`, and `LeaderboardPanel`.
+8. Which class appears to be the central class in the system?
+--> AppRouter. It controls which screen shows up and it owns all three panels.
 
-### Step 3 — Program Execution
+9. Which classes depend on or interact with other classes?
+--> All three panels use AppRouter to switch screens and Assets to load files. LeaderboardPanel also uses LeaderboardRepository to load data and LeaderboardAlgorithms to sort and search.
 
-**Which class appears responsible for drawing graphics?**
-`MainMenuPanel` draws the menu screen. `RabbitGamePanel` draws the game screen with the rabbit and score.
+10. Where in the code are scores stored?
+--> In ScoreEntry objects inside an ArrayList in LeaderboardPanel. The data comes from leaderboard.csv.
 
-**Which class appears responsible for loading files or content?**
-`Assets` loads images and audio. `LeaderboardRepository` loads the CSV file.
+11. What data type is used to store scores?
+--> int
 
-**How does the game update what appears on the screen?**
-It uses timers that fire every second. One timer moves the rabbit to a new spot. Another counts down the clock. Each time they fire, the screen redraws.
-
-### Step 4 — UML Diagram
-
-**What does the UML diagram help you understand about the program?**
-It shows which classes exist and how they connect to each other.
-
-**Which class appears to be the central class in the system?**
-`AppRouter`. It controls which screen the user sees and owns all three panels.
-
-**Which classes depend on or interact with other classes?**
-All three panels use `AppRouter` to switch screens and `Assets` to load files. `LeaderboardPanel` uses `LeaderboardRepository` to load data and `LeaderboardAlgorithms` to sort and search.
-
-### Step 5 — Score System
-
-**Where in the code are scores stored?**
-In `ScoreEntry` objects inside an `ArrayList` in `LeaderboardPanel`. The data comes from `leaderboard.csv`.
-
-**What data type is used to store scores?**
-`int`
-
-**Where would it make sense to implement sorting of scores?**
-In `LeaderboardAlgorithms.java`. It already has empty methods that the leaderboard screen calls.
+12. Where would it make sense to implement sorting of scores?
+--> In LeaderboardAlgorithms.java. It already has empty methods that the leaderboard screen calls.
 
 ---
 
